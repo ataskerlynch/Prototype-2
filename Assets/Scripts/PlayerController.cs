@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     private float xRange = 20;
     private float zRangeMin = -2;
     private float zRangeMax = 18;
-    private Vector3 projectileSpanwLoc = Vector3(0, 0, 1);
+    private Vector3 projectileSpanwLoc = new Vector3(0, 0, 1);
     public GameObject projectilePrefab;
 
 
