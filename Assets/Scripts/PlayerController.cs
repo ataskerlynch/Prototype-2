@@ -10,7 +10,9 @@ public class PlayerController : MonoBehaviour
     private float xRange = 20;
     private float zRangeMin = -2;
     private float zRangeMax = 18;
+    private Vector3 projectileSpanwLoc = Vector3(0, 0, 1);
     public GameObject projectilePrefab;
+
 
     // Update is called once per frame
     void Update()
@@ -18,7 +20,7 @@ public class PlayerController : MonoBehaviour
         // Fire projectile if space key is pressed
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(projectilePrefab, transform.position + new Vector3(0,0,1), projectilePrefab.transform.rotation);
+            Instantiate(projectilePrefab, transform.position + projectileSpanwLoc, projectilePrefab.transform.rotation);
         }
 
         // Move player character left/right based on player input
