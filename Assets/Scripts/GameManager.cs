@@ -34,8 +34,8 @@ private bool gameOverFlag = false;
         {
             score += value;
             if (score <= 0) 
-            { 
-                score=0
+            {
+                score = 0;
             }
             Debug.Log("Lives: " + lives + " - Score: " + score);
         }
