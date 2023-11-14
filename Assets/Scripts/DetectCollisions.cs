@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,7 +20,7 @@ public class DetectCollisions : MonoBehaviour
         if ((CompareTag("Projectile") && other.CompareTag("Animal")))
         {
             gameManager.updateScore(5);
-            Destroy(gameObject);
+            gameObject.SetActive(false);
             Destroy(other.gameObject);
         }
         else
@@ -32,4 +32,3 @@ public class DetectCollisions : MonoBehaviour
     }
 
 }
-

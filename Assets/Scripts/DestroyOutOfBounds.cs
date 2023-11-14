@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,10 +22,15 @@ public class DestroyOutOfBounds : MonoBehaviour
     void Update()
     {
         // check if gameobject has left the defined boundries
-        if (transform.position.z > topBound| transform.position.z < lowerBound|| transform.position.x > rightBound || transform.position.x < leftBound)
+        if (transform.position.z > topBound)
+        {
+            // Just deactivate it
+            gameObject.SetActive(false);
+        }
+        else if (transform.position.z < lowerBound || transform.position.x > rightBound || transform.position.x < leftBound)
         {
             // if the object is an animal then adjust score
-            if (tag=="Animal")
+            if (tag == "Animal")
             {
                 gameManager.updateScore(-deductScore);
             }
@@ -33,3 +38,4 @@ public class DestroyOutOfBounds : MonoBehaviour
         }
     }
 }
+

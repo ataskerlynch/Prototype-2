@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,7 +20,12 @@ public class PlayerController : MonoBehaviour
         // Fire projectile if space key is pressed
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(projectilePrefab, transform.position + projectileSpanwLoc, projectilePrefab.transform.rotation);
+            GameObject pooledProjectile = ObjectPooler.SharedInstance.GetPooledObject();
+            if (pooledProjectile != null)
+            {
+                pooledProjectile.SetActive(true); // activate it
+                pooledProjectile.transform.position = transform.position + projectileSpanwLoc; // position it at player
+            }
         }
 
         // Move player character left/right based on player input
